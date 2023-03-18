@@ -1,0 +1,148 @@
+@import '../../App.scss';
+
+.newTaskContainer{
+    width: 60vw;
+    min-width: 560px;
+    max-width: 900px;
+    padding: 2% 4%;
+    height: fit-content;
+    border-bottom: 2px solid $primary;
+    border-right: 2px solid $primary;
+    @include border_radius(15px);
+
+    h2{
+        @include head_success;
+        letter-spacing: 2px;
+    }
+
+    .addForm{
+        margin-top: 10%;
+
+        input{
+            padding: 7% 4%;
+            margin: 5% auto;
+            margin-top: 1%;
+            width: 100%;
+            outline: $primary inset 2px;
+            border-width: 1px;
+            @include border-radius(5px);
+            border-top-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        #taskDescription_label {
+            font-size: 1.2em;
+            font-weight: $font_semi-bold;
+            @include theme_colors;
+            padding: 2.5%;
+            margin-left: -1.7px;
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+        }
+        
+        #taskStatusSelection{
+            width: 100%;
+            margin: 3% auto;
+            font-size: 1.4em;
+            font-weight: $font_semi-bold;
+            letter-spacing: 4px;
+
+            select {
+                width: 100%;
+                padding: 2%;
+                margin-top: 1%;
+                @include theme_colors;
+                outline: none;
+                font-size: 0.75em;
+                font-weight: $font_semi-bold;
+
+                option{
+                    font-size: 1.1em;
+                }
+
+                option:checked{
+                    background-color: $info;
+                }
+
+                option:first-child {
+                    color: $success_light;
+                }
+
+                option:last-child{
+                    color: $danger;
+                }
+            }
+
+            span {
+                flex-grow: 1;
+            }
+        }
+
+        #addTask_button {
+            @include flex_center_vertical;
+            gap: 20px;
+            padding: 2% 5% 2% 3%;
+            margin-top: 5%;
+            @include theme_colors;
+            font-size: 1.1em;
+            font-weight: $font_semi-bold;
+            cursor: pointer;
+            @include border_radius(3px);
+            
+            svg {
+                font-size: 22px;
+                color: $success_light;
+            }
+        }
+        
+        #addTask_button:hover {
+            outline: $success_light inset 1px;
+            color: $success_light;
+        }
+    }
+}
+
+@media only screen and (max-width: 576px) {
+   .newTaskContainer{
+    width: 100%;
+    min-width: auto;
+    padding: 2% 5%;
+    border: none;
+    margin-top: 25%;
+    
+        h2{
+           letter-spacing: normal;
+        }
+
+        .addForm{
+
+            #taskDescription_label{
+                padding: 2%;
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
+                font-size: 1.1em;
+            }
+
+            #taskStatusSelection {
+                @include flex_center_vertical;
+                font-size: 1.2em;
+
+                select{
+                    width: 70%;
+                    padding: 1.5%;
+                    margin-top: 0;
+                }   
+            }
+
+            #addTask_button {
+                padding: 1.5% 6% 1.5% 4%;
+                gap: 10px;
+                margin-top: 5%;
+                border-width: 1px;
+                @include border_radius(2px);
+                font-size: 1em;
+            }
+        }
+        
+    }
+}

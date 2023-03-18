@@ -1,0 +1,59 @@
+@import '../../App.scss';
+
+header{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    @include flex_center_vertical;
+    padding: 1em 0.8em;
+    border-bottom: 3px double $primary;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 1.5em;   
+    font-style: oblique;
+
+    .title{
+        font-weight: $font_semi-bold;
+        letter-spacing: 2px;
+        @include flex_center_vertical;
+    }
+    
+    .author{
+        margin-right: 0.2em;
+        opacity: .6;
+    }
+    svg{
+        margin-right: 0.7em;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    header{
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        margin-bottom: 2%;
+        
+        .title{
+            letter-spacing: normal;
+
+            .navToggler{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                font-size: 0.9em;
+                margin-top: 2%;
+                @include transition(all, 0.4s, ease-in-out);
+            }
+
+            .navToggler::after{
+                content: '▼';
+            }
+    
+            .navToggler.active{
+                @include transformation(rotate(180deg));
+                @include transition(all, 0.4s, ease-in-out);
+            }
+        }
+        .author {
+            margin-right: 0.5em;
+        }
+    }
+}

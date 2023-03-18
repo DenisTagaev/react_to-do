@@ -1,0 +1,78 @@
+$success: green;
+$success_light: rgb(115, 255, 115);
+$primary: #99f;
+$main_white: #fafafa;
+$info: rgb(18, 18, 201);
+$danger: rgb(222, 61, 61);
+$font_semi-bold: 600;
+
+@mixin theme_colors{
+    background-color: $primary;
+    color: $main_white;
+}
+
+@mixin flex_between{
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex_center_vertical{
+    @include flex_between;
+    align-items: center;
+}
+
+@mixin head_success{
+    text-align: center;
+    text-decoration: underline;
+    color: $success;
+}
+
+@mixin border_radius($radius){
+    border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+}
+
+@mixin transformation($method){
+    transform: $method;
+    -webkit-transform: $method;
+    -moz-transform: $method;
+    -ms-transform: $method;
+    -o-transform: $method;
+}
+
+@mixin transition($property, $time, $method){
+    transition: $property $time $method;
+    -webkit-transition: $property $time $method;
+    -moz-transition: $property $time $method;
+    -ms-transition: $property $time $method;
+    -o-transition: $property $time $method;
+}
+
+main{
+    margin: 0.5% 1.5%;
+    
+    .tasksContainer{
+        // flex: 2;
+        width: 70%;
+        margin: 0 auto;
+
+        h2{
+            margin-bottom: 5%;
+        }
+    }
+}
+
+@media only screen and (max-width: 576px){
+    main{
+        display: block;
+    }
+
+    .newTaskContainer{
+        padding-bottom: 5%;
+        border-bottom: 2px solid $primary;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    }
+}

@@ -1,0 +1,29 @@
+@import '../../App.scss';
+
+.helperOutletContainer {
+    width: 90%;
+    margin: 5% auto;
+
+    h3 {
+        text-align: center;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-transform: capitalize;
+        color: $info;
+    }
+
+    .helperOutletInstructions {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-indent: 10px;
+        opacity: 0.6;
+        text-align: justify;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .helpRootPageContainer{
+
+        .helperOutletContainer{
+            width: 80%;
+        }
+    }
+}
